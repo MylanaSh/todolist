@@ -42,3 +42,4 @@ while True:
         case _:
             print("Помилка, спробуйте ще раз.")
 #hi? this is test comment
+#moony fox and wednesday
