@@ -1,8 +1,8 @@
 import normalnieFunctions as nf
 from normalnieFunctions import songs, information_about_authors
 
-nf.create_file("songs.json", songs)
-nf.create_file("infoaut.csv", information_about_authors)
+nf.create_file("../collegelb1/songs.json", songs)
+nf.create_file("../collegelb1/infoaut.csv", information_about_authors)
 
 
 while True:
@@ -26,15 +26,15 @@ while True:
                 f"Найпопулярніша пісня: {popular_song[0]} - {popular_song[1]} ({popular_song[2]}) з {popular_song[3]} прослуховуваннями")
         case '3':
             song_add = tuple(input("Введіть Title, Author, Genre, Plays через кому: ").split(','))
-            nf.append_file("songs.json", song_add)
-            nf.append_file("songs.txt", song_add)
+            nf.append_file("../collegelb1/songs.json", song_add)
+            nf.append_file("../collegelb1/songs.txt", song_add)
             print("Пісню додано.")
         case '4':
             song_title = input("Введіть назву пісні: ")
             print(nf.authorinfo_by_song(song_title, songs, information_about_authors))
         case '5':
             author_info_add = tuple(input("Введіть Name, City, Active через кому: ").split(','))
-            nf.append_information_about_authors("infoaut.csv", author_info_add)
+            nf.append_information_about_authors("../collegelb1/infoaut.csv", author_info_add)
             print("Інформацію про автора додано.")
         case '6':
             print("До побачення!")

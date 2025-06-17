@@ -121,7 +121,7 @@ information_about_authors = [
 for t in songs:
     print({t[0]} , {t[1]})
 
-create_file("songs.json", songs)
-create_file("infoaut.csv", information_about_authors)
+create_file("../collegelb1/songs.json", songs)
+create_file("../collegelb1/infoaut.csv", information_about_authors)
 
 popular_genre, popular_song = fpgs(songs)
