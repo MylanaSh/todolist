@@ -23,19 +23,16 @@ def create_file(fileName, text):
     try:
         with open(fileName, 'w', encoding='utf-8') as file:
             if fileName.endswith(".json"):
+                songs_json = []
                 for t in text:
-                    songs_json = {}
-                    name = t[0]
-                    author = t[1]
-                    genre = t[2]
-                    plays = t[3]
-
-                    songs_json[name] = {
+                    name, author, genre, plays = t
+                    songs_json.append({
+                        "Title": name,
                         "Author": author,
                         "Genre": genre,
                         "Plays": plays
-                    }
-                    json.dump(songs_json, file, indent=2)
+                    })
+                json.dump(songs_json, file, indent=2)
 
             if fileName.endswith(".csv"):
                 for t in text:
