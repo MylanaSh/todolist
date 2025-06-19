@@ -25,24 +25,24 @@ while True:
         case '2':
             print(information_about_authors)
         case '3':
+            popular_genre, _ = nf.fpgs(songs)
+            print(f"Найпопулярніший жанр: {popular_genre}")
+        case '4':
             _, popular_song = nf.fpgs(songs)
             print(
                 f"Найпопулярніша пісня: {popular_song[0]} - {popular_song[1]} ({popular_song[2]}) з {popular_song[3]} прослуховуваннями")
-        case '4':
-            popular_genre, _ = nf.fpgs(songs)
-            print(f"Найпопулярніший жанр: {popular_genre}")
         case '5':
-            song_title = input("Введіть назву пісні: ")
-            print(nf.authorinfo_by_song(song_title, songs, information_about_authors))
-        case '6':
-            author_info_add = tuple(input("Введіть Name, City, Active через кому: ").split(','))
-            nf.append_information_about_authors("csv.csv", author_info_add)
-            print("Інформацію про автора додано.")
-        case '7':
             song_add = tuple(input("Введіть Title, Author, Genre, Plays через кому: ").split(','))
             nf.append_file("songs.json", song_add)
             nf.append_file("songs.txt", song_add)
             print("Пісню додано.")
+        case '6':
+            song_title = input("Введіть назву пісні: ")
+            print(nf.authorinfo_by_song(song_title, songs, information_about_authors))
+        case '7':
+            author_info_add = tuple(input("Введіть Name, City, Active через кому: ").split(','))
+            nf.append_information_about_authors("infoaut.csv", author_info_add)
+            print("Інформацію про автора додано.")
         case '8':
             print("До побачення!")
             break
