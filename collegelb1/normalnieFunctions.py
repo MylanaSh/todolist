@@ -49,7 +49,7 @@ def create_file(fileName, text):
 
 def fpgs(songs):
     genreplays = {}
-    mpsong = ()
+    mpsong = tuple()
 
     for title, author, genre, plays in songs:
         if genre not in genreplays:
