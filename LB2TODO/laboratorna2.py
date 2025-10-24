@@ -202,7 +202,7 @@ def add_task():
     combo_category.set("")
     status_var.set(False)
 
-def delete_by_name(event):
+def delete_by_name(_event):
     name = entry_delete.get().strip()
     if not name:
         messagebox.showerror("Попередження","Введіть назву завдання для видалення!")
@@ -279,9 +279,9 @@ def reset_filters():      #скидає всі фільтри
 def save_to_file():
     try:
         with open("tasks.json", "w", encoding="utf-8") as file:
-            json.dump(tasks, file, ensure_ascii=False, indent=4)
+            file.write(json.dumps(tasks, ensure_ascii=False, indent=4))
             messagebox.showinfo("Успіх!","Файл збережено!")
-    except:
+    except FileNotFoundError:
         messagebox.showerror("Помилка!","Не вдалося зберегти файл!")
 
 def load_from_file():
@@ -291,7 +291,7 @@ def load_from_file():
             tasks.clear()
             tasks.extend(data)
         update_listbox()
-    except:
+    except FileNotFoundError:
         pass
 
 #прив'язування кнопок
